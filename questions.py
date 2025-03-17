@@ -47,7 +47,7 @@ for _ in range(3):
             print("Respuesta Invalida")
             sys.exit(1)
         else:
-            user_answer = int(user_answer)                   -1
+            user_answer = int(user_answer)-1
         # Se verifica si la respuesta es correcta
         if user_answer == correct_answers_index[question_index]:
             print("¡Correcto!")
