@@ -28,15 +28,20 @@ answers = [
 
 # Índice de la respuesta correcta para cada pregunta, en el mismo orden que las preguntas
 correct_answers_index = [1, 2, 0, 3, 1]
+
+#Inicializamos sus puntos
 puntos = 0
-# El usuario deberá contestar 3 preguntas
-for _ in range(3):
+
+#Divido en tuplas
+questions_to_ask = random.choices(list(zip(questions,answers,correct_answers_index)),k=3)
+
+# El usuario deberá contestar 3 preguntas 
+for pregunta,respuestas,index_correcto in questions_to_ask:
     # Se selecciona una pregunta aleatoria
-    question_index = random.randint(0, len(questions) - 1)
-    
+    print(pregunta)
+    print(respuestas)
     # Se muestra la pregunta y las respuestas posibles
-    print(questions[question_index])
-    for i, answer in enumerate(answers[question_index]):
+    for i, answer in enumerate(respuestas):
         print(f"{i + 1}. {answer}")
     
     # El usuario tiene 2 intentos para responder correctamente
@@ -49,7 +54,7 @@ for _ in range(3):
         else:
             user_answer = int(user_answer)-1
         # Se verifica si la respuesta es correcta
-        if user_answer == correct_answers_index[question_index]:
+        if user_answer == index_correcto:
             print("¡Correcto!")
             puntos += 1
             break
@@ -58,5 +63,5 @@ for _ in range(3):
             # se muestra la respuesta correcta
             puntos-= 0.5
             print("Incorrecto. La respuesta correcta es:")
-            print(answers[question_index][correct_answers_index[question_index]])
+            print(pregunta[correct_answers_index[index_correcto]])
 print(f'Su puntuacion final es de {float(puntos)}/3.0')
