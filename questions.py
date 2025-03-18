@@ -32,14 +32,13 @@ correct_answers_index = [1, 2, 0, 3, 1]
 #Inicializamos sus puntos
 puntos = 0
 
-#Divido en tuplas
-questions_to_ask = random.choices(list(zip(questions,answers,correct_answers_index)),k=3)
+#Divido en tuplas y generar listas que no se repiten por el uso del random.sample()
+questions_to_ask = random.sample(list(zip(questions,answers,correct_answers_index)),k=3)
 
 # El usuario deberá contestar 3 preguntas 
 for pregunta,respuestas,index_correcto in questions_to_ask:
     # Se selecciona una pregunta aleatoria
     print(pregunta)
-    print(respuestas)
     # Se muestra la pregunta y las respuestas posibles
     for i, answer in enumerate(respuestas):
         print(f"{i + 1}. {answer}")
