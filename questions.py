@@ -58,9 +58,10 @@ for pregunta,respuestas,index_correcto in questions_to_ask:
             puntos += 1
             break
         else:
-            # Si el usuario no responde correctamente después de 2 intentos,
-            # se muestra la respuesta correcta
-            puntos-= 0.5
-            print("Incorrecto. La respuesta correcta es:")
-            print(pregunta[correct_answers_index[index_correcto]])
+            print("Respuesta incorrecta")
+    else:
+        # Si el usuario no responde correctamente después de 2 intentos,
+        # se muestra la respuesta correcta
+        print("Incorrecto. La respuesta correcta es:")
+        print(respuestas[index_correcto])
 print(f'Su puntuacion final es de {float(puntos)}/3.0')
