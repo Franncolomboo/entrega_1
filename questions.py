@@ -59,6 +59,7 @@ for pregunta,respuestas,index_correcto in questions_to_ask:
             break
         else:
             print("Respuesta incorrecta")
+            puntos -= 0.5
     else:
         # Si el usuario no responde correctamente después de 2 intentos,
         # se muestra la respuesta correcta
