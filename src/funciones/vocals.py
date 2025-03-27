@@ -6,5 +6,5 @@ def vocales(texto):
         if len(i) >1:   #Si tiene mas de una palabra el renglon ,puedo verificar si la segunda palabra empieza con una vocal
             palabra = i.split()[1]; #me quedo con la segunda palabra del renglon
             if palabra.startswith(tuple(listaVocales)): #verifico si la segunda palabra empieza con una vocal
-                print(i) #imprime el renglon
+                print(i) #imprime el renglon 
     return
