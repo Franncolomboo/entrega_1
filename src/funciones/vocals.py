@@ -1,4 +1,5 @@
-def vocales(texto): 
+def vocales(texto):
+    """"Imprime las oraciones que empiezan con una vocal""" 
     #Recibo el texto dividido en renglones 
     listaVocales=["a","e","i","o","u"]
     lista_zen = texto.splitlines("\n") # Vuelvo a dividir los renglones por palabras
